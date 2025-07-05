@@ -417,7 +417,15 @@ FodyWeavers.xsd
 *.msm
 *.msp
 
-bin/
-**/bin/
-bin/**
-**/bin/**
+!dep/x64/
+!dep/x86/
+!dep/[Ww][Ii][Nn]32/
+!dep/[Aa][Rr][Mm]/
+!dep/[Aa][Rr][Mm]64/
+!dep/[Aa][Rr][Mm]64[Ee][Cc]/
+!**/dep/x64/
+!**/dep/x86/
+!**/dep/[Ww][Ii][Nn]32/
+!**/dep/[Aa][Rr][Mm]/
+!**/dep/[Aa][Rr][Mm]64/
+!**/dep/[Aa][Rr][Mm]64[Ee][Cc]/
