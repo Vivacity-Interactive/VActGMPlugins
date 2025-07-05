@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e8a08b9e-593d-4302-8fa3-ddafc9f14afa}</ProjectGuid>
+    <RootNamespace>gmgmpdll</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\</OutDir>
+    <IntDir>bin\$(Platform)\</IntDir>
+    <TargetName>gmgmp</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\</OutDir>
+    <IntDir>bin\$(Platform)\</IntDir>
+    <TargetName>gmgmp</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\</OutDir>
+    <IntDir>bin\$(Platform)\</IntDir>
+    <TargetName>gmgmp</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)bin\$(Platform)\</OutDir>
+    <IntDir>bin\$(Platform)\</IntDir>
+    <TargetName>gmgmp</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;GMGMPDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);GMGMP_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command Copy-Item $(OutDir)$(TargetName).dll $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.* $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)$(TargetName)\$(TargetName).h $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force</Command>
+      <Message>Copy project dll to librairy directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;GMGMPDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);GMGMP_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command Copy-Item $(OutDir)$(TargetName).dll $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.* $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)$(TargetName)\$(TargetName).h $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force</Command>
+      <Message>Copy project dll to librairy directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;GMGMPDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);GMGMP_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command Copy-Item $(OutDir)$(TargetName).dll $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.* $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)$(TargetName)\$(TargetName).h $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy project dll to librairy directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;GMGMPDLL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);GMGMP_DLL_EXPORTS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command Copy-Item $(OutDir)$(TargetName).dll $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.* $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force
+PowerShell.exe -Command Copy-Item $(SolutionDir)$(TargetName)\$(TargetName).h $(SolutionDir)bin\$(Platform)\$(TargetName)\ -Force</Command>
+      <Message>Copy project dll to librairy directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="gmgmp-dll.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gmgmp\gmgmp.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="gmgmp-dll.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gmgmp\gmgmp.vcxproj">
+      <Project>{396e062a-2250-424f-9f08-409164e8cd38}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
