@@ -112,6 +112,8 @@
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)dep\$(Platform)\ -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.dll $(OutDir) -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) -Force</Command>
     </PreBuildEvent>
@@ -133,6 +135,8 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)dep\$(Platform)\ -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.dll $(OutDir) -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) -Force</Command>
     </PreBuildEvent>
@@ -158,6 +162,8 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)dep\$(Platform)\ -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.dll $(OutDir) -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) -Force</Command>
     </PreBuildEvent>
@@ -183,6 +189,8 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)lib\$(Platform)\ -Force
+PowerShell.exe -Command New-Item -ItemType Directory -Path $(SolutionDir)dep\$(Platform)\ -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)lib\$(Platform)\*.dll $(OutDir) -Force
 PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) -Force</Command>
     </PreBuildEvent>

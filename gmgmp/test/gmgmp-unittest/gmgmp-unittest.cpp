@@ -13,7 +13,7 @@ namespace gmgmpunittest
 		
 		TEST_METHOD(TestMethod1)
 		{
-			const int life = 42;
+			const double life = 42.0;
 			Assert::AreEqual(life, _fn_gmgmp());
 			Assert::AreEqual(life, _fn_gmgmp_arg(life));
 		}

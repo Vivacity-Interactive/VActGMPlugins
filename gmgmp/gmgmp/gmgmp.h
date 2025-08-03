@@ -2,14 +2,14 @@
 
 #ifndef GMGMP_API
 #define GMGMP_API
-#endif // !GMGMP_API
+#endif
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-GMGMP_API int _fn_gmgmp(void);
-GMGMP_API int _fn_gmgmp_arg(int arg);
+GMGMP_API double _fn_gmgmp(void);
+GMGMP_API double _fn_gmgmp_arg(double arg);
 
 GMGMP_API double gmp_real(char* a_string);
 GMGMP_API char* gmp_string(double a_real);

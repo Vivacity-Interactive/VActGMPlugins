@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{AF6D7D33-A6A8-1890-9DB2-6EC7DFB78034}</ProjectGuid>
+    <ProjectGuid>{1A5E073B-8C1B-3797-2C0A-7B57708DBFDE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>gmgmpexternunittest</RootNamespace>
+    <RootNamespace>gmvec2externunittest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectSubType>NativeUnitTestProject</ProjectSubType>
   </PropertyGroup>
@@ -108,7 +108,6 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform);$(VCInstallDir)UnitTest\lib;$(SolutionDir)lib;$(SolutionDir)lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
@@ -131,7 +130,6 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform);$(VCInstallDir)UnitTest\lib;$(SolutionDir)lib;$(SolutionDir)lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
@@ -158,7 +156,6 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform);$(VCInstallDir)UnitTest\lib;$(SolutionDir)lib;$(SolutionDir)lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
@@ -185,7 +182,6 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir);$(SolutionDir)dep;$(SolutionDir)dep\$(Platform);$(ProjectDir)..\$(TargetName);$(ProjectDir)..\$(TargetName)\dep;$(ProjectDir)..\$(TargetName)\dep\$(Platform);$(ProjectDir)dep;$(ProjectDir)dep\$(Platform);$(VCInstallDir)UnitTest\lib;$(SolutionDir)lib;$(SolutionDir)lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
       <Command>PowerShell.exe -Command New-Item -ItemType Directory -Path $(OutDir) -Force
@@ -196,7 +192,7 @@ PowerShell.exe -Command Copy-Item $(SolutionDir)dep\$(Platform)\*.dll $(OutDir) 
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gmgmp-extern-unittest.cpp" />
+    <ClCompile Include="gmvec2-extern-unittest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

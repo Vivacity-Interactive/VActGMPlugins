@@ -11,12 +11,12 @@
 #include <gmp/gmp.h>
 #pragma warning(pop)
 
-GMGMP_API int _fn_gmgmp()
+GMGMP_API double _fn_gmgmp()
 {
-	return 42;
+	return 42.0;
 }
 
-GMGMP_API int _fn_gmgmp_arg(int arg)
+GMGMP_API double _fn_gmgmp_arg(double arg)
 {
 	return arg;
 }
