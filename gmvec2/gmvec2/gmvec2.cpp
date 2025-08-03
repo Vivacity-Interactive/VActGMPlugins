@@ -727,7 +727,7 @@ GMVEC2_API double vec2_gt(double lhs, double rhs)
 	return _lhs._rep;
 }
 
-GMVEC2_API double vec2_ltq(double lhs, double rhs)
+GMVEC2_API double vec2_le(double lhs, double rhs)
 {
 	float2_t _lhs{ lhs }, _rhs{ rhs };
 	_lhs.x = _lhs.x <= _rhs.x;
@@ -735,7 +735,7 @@ GMVEC2_API double vec2_ltq(double lhs, double rhs)
 	return _lhs._rep;
 }
 
-GMVEC2_API double vec2_gtq(double lhs, double rhs)
+GMVEC2_API double vec2_ge(double lhs, double rhs)
 {
 	float2_t _lhs{ lhs }, _rhs{ rhs };
 	_lhs.x = _lhs.x >= _rhs.x;
@@ -743,7 +743,7 @@ GMVEC2_API double vec2_gtq(double lhs, double rhs)
 	return _lhs._rep;
 }
 
-GMVEC2_API double vec2_neq(double lhs, double rhs)
+GMVEC2_API double vec2_ne(double lhs, double rhs)
 {
 	float2_t _lhs{ lhs }, _rhs{ rhs };
 	_lhs.x = _lhs.x != _rhs.x;

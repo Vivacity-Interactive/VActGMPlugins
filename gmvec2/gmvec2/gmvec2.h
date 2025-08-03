@@ -99,6 +99,9 @@ extern "C" {
 
 	GMVEC2_API void vec2_init_seed(double seed);
 
+	//GMVEC2_API char* vec2_fn_ptr(char* name);
+	//GMVEC2_API void vec2_buffer_fn(char* ptr_fn, char* ptr_args, char* ptr_buffer);
+
 	GMVEC2_API void vec2_buffer_free(char* ptr_buffer);
 	GMVEC2_API char* vec2_buffer(double capacity);
 	
@@ -204,9 +207,9 @@ extern "C" {
 	GMVEC2_API double vec2_eq(double lhs, double rhs);
 	GMVEC2_API double vec2_lt(double lhs, double rhs);
 	GMVEC2_API double vec2_gt(double lhs, double rhs);
-	GMVEC2_API double vec2_ltq(double lhs, double rhs);
-	GMVEC2_API double vec2_gtq(double lhs, double rhs);
-	GMVEC2_API double vec2_neq(double lhs, double rhs);
+	GMVEC2_API double vec2_le(double lhs, double rhs);
+	GMVEC2_API double vec2_ge(double lhs, double rhs);
+	GMVEC2_API double vec2_ne(double lhs, double rhs);
 	GMVEC2_API double vec2_and(double lhs, double rhs);
 	GMVEC2_API double vec2_or(double lhs, double rhs);
 	GMVEC2_API double vec2_not(double vec);
