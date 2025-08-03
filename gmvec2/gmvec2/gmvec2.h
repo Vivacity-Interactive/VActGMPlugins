@@ -129,8 +129,10 @@ extern "C" {
 
 	GMVEC2_API double vec2_rnd(double seed);
 	GMVEC2_API double vec2_rndr(double min, double max, double seed);
+	GMVEC2_API double vec2_rndr2(double vmin, double vmax, double seed);
 	GMVEC2_API double vec2_rndu(double seed);
 	GMVEC2_API double vec2_rndur(double min, double max, double seed);
+	GMVEC2_API double vec2_rndb(double seed);
 	GMVEC2_API double vec2_rndswap(double vec, double seed);
 	
 	GMVEC2_API double vec2_x(double vec);

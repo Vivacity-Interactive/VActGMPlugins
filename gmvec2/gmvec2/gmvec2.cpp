@@ -49,12 +49,12 @@ uint64_t _vec2_rnd_next(double seed = 0.0)
 
 inline float _vec2_rnd_next_float(double seed = 0.0)
 {
-	return _vec2_rnd_next(seed) * (1.0f / (std::numeric_limits<uint32_t>::max() + 1.0f));
+	return _vec2_rnd_next(seed) * (1.0f / (std::numeric_limits<uint64_t>::max() + 1.0));
 }
 
 inline float _vec2_rnd_next_float_range(double min, double max, double seed = 0.0)
 {
-	return static_cast<float>(min + _vec2_rnd_next_float(seed) * (min - max));
+	return static_cast<float>(min + _vec2_rnd_next_float(seed) * (max - min));
 }
 
 GMVEC2_API double _fn_gmvec2()
@@ -222,6 +222,14 @@ GMVEC2_API double vec2_rndr(double min, double max, double seed)
 	return _vec._rep;
 }
 
+GMVEC2_API double vec2_rndr2(double vmin, double vmax, double seed)
+{
+	float2_t _vec{}, _min{ vmin }, _max{ vmax };
+	_vec.x = _vec2_rnd_next_float_range(static_cast<double>(_min.x), static_cast<double>(_max.x), seed);
+	_vec.y = _vec2_rnd_next_float_range(static_cast<double>(_min.y), static_cast<double>(_max.y), seed);
+	return _vec._rep;
+}
+
 GMVEC2_API double vec2_rndu(double seed)
 {
 	float2_t _vec{};
@@ -244,7 +252,7 @@ GMVEC2_API double vec2_rndur(double min, double max, double seed)
 GMVEC2_API double vec2_rndb(double seed)
 {
 	float2_t _vec{};
-	uint64_t bx = _vec2_rnd_next(seed + _VEC2_SEED_4) >> 63;
+	uint32_t bx = static_cast<uint32_t>(_vec2_rnd_next(seed + _VEC2_SEED_4)) >> 31;
 	_vec.x = float(bx);
 	_vec.y = float(1.0f - bx);
 	return _vec._rep;
@@ -253,7 +261,7 @@ GMVEC2_API double vec2_rndb(double seed)
 GMVEC2_API double vec2_rndbr(double min, double max, double seed)
 {
 	float2_t _vec{};
-	float bx = static_cast<float>(_vec2_rnd_next(seed + _VEC2_SEED_4) >> 63);
+	float bx = static_cast<float>(static_cast<uint32_t>(_vec2_rnd_next(seed + _VEC2_SEED_4)) >> 31);
 	float _norm = _vec2_rnd_next_float_range(min, max, seed);
 	_vec.x = bx * _norm;
 	_vec.y = (1.0f - bx) * _norm;
@@ -262,11 +270,11 @@ GMVEC2_API double vec2_rndbr(double min, double max, double seed)
 
 GMVEC2_API double vec2_rndswap(double vec, double seed)
 {
-	float2_t _vec{ vec };
-	float b1 = static_cast<float>(_vec2_rnd_next(seed + _VEC2_SEED_4) >> 63);
+	float2_t _vec{ vec }, _temp{ vec };
+	float b1 = static_cast<float>(static_cast<uint32_t>(_vec2_rnd_next(seed + _VEC2_SEED_4)) >> 31);
 	float b0 = 1.0f - b1;
-	_vec.x = b1 * _vec.y + b0 * _vec.x;
-	_vec.y = b0 * _vec.y + b1 * _vec.x;
+	_vec.x = b1 * _temp.y + b0 * _temp.x;
+	_vec.y = b0 * _temp.y + b1 * _temp.x;
 	return _vec._rep;
 }
 
