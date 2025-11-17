@@ -119,6 +119,7 @@ extern "C" {
 	
 	GMVEC2_API double vec2_buffer_at(double index, char* ptr_buffer);
 	GMVEC2_API void vec2_buffer_at2(double index, char* ptr_buffer, char* ptr_vec);
+	GMVEC2_API double vec2_buffer_hasidx(double index, char* ptr_buffer);
 
 	GMVEC2_API void vec2_free(char* ptr_vec);
 	GMVEC2_API char* vec2_ptr(double vec);
